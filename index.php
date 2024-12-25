@@ -418,7 +418,7 @@ function checkFormat(data){
 					die();
 				}
 			}
-			echo json_encode(array('code' => 0, 'message' => $lumise->lang('connect to printful error, plz try again after some minutes!')));
+			echo json_encode(array('code' => 0, 'message' => $lumise->lang('getRequestImage - connect to printful error, plz try again after some minutes!' . json_encode($result))));
 			die();
         }
 		curl_close($ch);
@@ -445,7 +445,7 @@ function checkFormat(data){
 					die();
 				}
 			}
-			echo json_encode(array('code' => 0, 'message' => $lumise->lang('connect to printful error, plz try again after some minutes!')));
+			echo json_encode(array('code' => 0, 'message' => $lumise->lang('getRequest - connect to printful error, plz try again after some minutes!' . json_encode($result))));
 			die();
         }
 		curl_close($ch);
@@ -470,7 +470,7 @@ function checkFormat(data){
 
         $result = curl_exec($ch);
         if ($result == FALSE || $result == NULL || curl_getinfo($ch, CURLINFO_HTTP_CODE) != 200) {
-            echo json_encode(array('code' => 0, 'message' => $lumise->lang('connect to printful error, plz try again after some minutes!')));
+            echo json_encode(array('code' => 0, 'message' => $lumise->lang('postRequest - connect to printful error, plz try again after some minutes!' . json_encode($result))));
 			die();
         }
 
