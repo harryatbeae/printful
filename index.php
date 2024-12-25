@@ -603,9 +603,9 @@ function checkFormat(data){
 			if($order->get_shipping_address_1() == '' && $order->get_shipping_address_2() != ''){
 				$customerAddress = $order->get_shipping_address_2();
 			}
-			$customerCity = $order->get_billing_city();
-			$customerStateCode = $order->get_billing_state();
-			$customerCountryCode = $order->get_billing_country();
+			$customerCity = $order->get_shipping_city();
+			$customerStateCode = $order->get_shipping_state();
+			$customerCountryCode = $order->get_shipping_country();
 			$customerZip = $order->get_shipping_postcode();
 		}
 
